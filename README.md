@@ -90,7 +90,7 @@ This project implements a browser automation system with real-time streaming cap
 
 # Project Structure
 
-<img src="img/project-structure.PNG" alt="Project Folder Structure" style="width:500px;height:500px;"> </br>
+<img src="img/project-structure.PNG" alt="Project Folder Structure" style="width:600px;height:500px;"> </br>
 
 # Key Features
 
@@ -118,3 +118,33 @@ This project implements a browser automation system with real-time streaming cap
   1. Graceful connection management
   2. Session cleanup on shutdown
   3. Error logging and reporting
+
+
+# Implementation Details
+
+**Backend Architecture**
+
+The backend uses FastAPI to create a web server that:
+
+  1. Manages Chrome browser instances using Selenium
+  2. Captures and streams browser frames
+  3. Handles user interactions through WebSocket messages
+  4. Implements session management and cleanup
+
+
+**Frontend Architecture**
+
+The React frontend provides:
+
+  1. A canvas-based view of the browser stream
+  2. URL input and navigation controls
+  3. WebSocket connection management
+  4. User interaction handling and event translation
+
+
+# Project Image
+
+<img src="img/initial-page.PNG" alt="Initial Page View" style="width:1000px;height:600px;"> </br>
+<img src="img/blog1.PNG" alt="Blog Home Page" style="width:1000px;height:600px;"> </br>
+<img src="img/blog2.PNG" alt="Blog Search Result" style="width:1000px;height:600px;"> </br>
+
