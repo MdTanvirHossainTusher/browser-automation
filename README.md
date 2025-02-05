@@ -142,9 +142,13 @@ The React frontend provides:
   4. User interaction handling and event translation
 
 
-# Project Image
+# Application Interface
 
-<img src="img/initial-page.PNG" alt="Initial Page View" style="width:1000px;height:600px;"> </br>
-<img src="img/blog1.PNG" alt="Blog Home Page" style="width:1000px;height:600px;"> </br>
-<img src="img/blog2.PNG" alt="Blog Search Result" style="width:1000px;height:600px;"> </br>
+<img src="img/initial-page.PNG" alt="Initial Page View" style="width:1000px;height:600px;"> </br></br>
+<img src="img/blog1.PNG" alt="Blog Home Page" style="width:1000px;height:600px;"> </br></br>
+<img src="img/blog2.PNG" alt="Blog Search Result" style="width:1000px;height:600px;"> </br></br>
 
+
+# Application Video
+
+You can find the detail video of the project [here.](https://youtu.be/NoOQGqWKXB0)
