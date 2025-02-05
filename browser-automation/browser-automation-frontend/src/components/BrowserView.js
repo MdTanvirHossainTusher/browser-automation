@@ -35,6 +35,9 @@ const BrowserView = ({ websocket, onInteract }) => {
     }
 
     const handleKeyDown = (event) => {
+        if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(event.key)) {
+            event.preventDefault()
+        }
         onInteract({
             type: 'keypress', 
             key: event.key
@@ -49,6 +52,7 @@ const BrowserView = ({ websocket, onInteract }) => {
                 onClick={handleCanvasClick}
                 tabIndex={0}
                 onKeyDown={handleKeyDown}
+                style={{ outline: 'none' }}
             />
         </div>
     )

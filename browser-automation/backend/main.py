@@ -77,7 +77,12 @@ async def handle_user_actions(driver, websocket: WebSocket):
                     "Backspace": Keys.BACKSPACE,
                     "Tab": Keys.TAB,
                     "Escape": Keys.ESCAPE,
+                    "ArrowUp": Keys.ARROW_UP,
+                    "ArrowDown": Keys.ARROW_DOWN,
+                    "ArrowLeft": Keys.ARROW_LEFT,
+                    "ArrowRight": Keys.ARROW_RIGHT,
                 }
+
                 selenium_key = key_mapping.get(key, key)
                 action_chains.send_keys(selenium_key).perform()
                 action_chains.reset_actions()
