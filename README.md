@@ -151,4 +151,4 @@ The React frontend provides:
 
 # Application Video
 
-You can find the detail video of the project [here.](https://youtu.be/NoOQGqWKXB0)
+You can find the detail video of the project [here.](https://youtu.be/IyiJqPirbe8)
