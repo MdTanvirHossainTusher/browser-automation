@@ -27,8 +27,8 @@ app.add_middleware(
 
 browser_sessions: Dict[str, dict] = {}
 
+
 async def capture_browser_frames(driver, websocket: WebSocket):
-    """Continuously capture and stream browser frames"""
     while True:
         try:
             screenshot = driver.get_screenshot_as_png()
@@ -48,8 +48,8 @@ async def capture_browser_frames(driver, websocket: WebSocket):
             logger.error(f"Error capturing frame: {e}")
             break
 
+
 async def handle_user_actions(driver, websocket: WebSocket):
-    """Handle incoming user actions"""
     try:
         action_chains = ActionChains(driver)
         while True:
@@ -85,9 +85,10 @@ async def handle_user_actions(driver, websocket: WebSocket):
     except Exception as e:
         logger.error(f"Error handling user action: {e}")
 
+
 @app.post("/api/browser/start")
 async def start_browser_session():
-    """Start a new browser session"""
+
     session_id = str(uuid.uuid4())
     
     try:
@@ -119,9 +120,9 @@ async def start_browser_session():
             detail=f"Failed to start browser session: {str(e)}"
         )
 
+
 @app.websocket("/ws/{session_id}")
 async def websocket_endpoint(websocket: WebSocket, session_id: str):
-    """Handle WebSocket connection for browser streaming"""
     if session_id not in browser_sessions:
         await websocket.close(code=4000)
         return
@@ -142,12 +143,13 @@ async def websocket_endpoint(websocket: WebSocket, session_id: str):
         frame_task.cancel()
         action_task.cancel()
 
+
 @app.on_event("shutdown")
 async def shutdown_event():
-    """Cleanup browser sessions on shutdown"""
     for session in browser_sessions.values():
         session["driver"].quit()
     browser_sessions.clear()
+
 
 @app.get("/")
 async def root():
